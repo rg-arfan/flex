@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body id="home">
+    <div class="sidedrawer">
+      <ul class="list_component">
+        <li><a class="navlink" href="#home">Home</a></li>
+        <li><a class="navlink" href="#our_service">About</a></li>
+        <li><a class="navlink" href="#contact_us">Contact</a></li>
+        <li><a class="navlink" href="arfan.html" target="blank"">About Me</a></li>
+      </ul>
+    </div>
+
+    <div class="backdrop"></div>
+
+    <!-- Navbar -->
+
+    <nav id="navbar">
+      <a href="" class="brand"><img src="img/logo.svg" alt="" width="150px" /></a>
+      <ul class="list_component">
+        <li><a class="navlink" href="#home">Home</a></li>
+        <li><a class="navlink" href="#our_service">Our Service</a></li>
+        <li><a class="navlink" href="#contact_us">Contact Us</a></li>
+        <li><a class="navlink" href="arfan.html" target="blank"">About Me</a></li>
+      </ul>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+
+    <section id="banner">
+      <div class="container">
+        <div class="banner">
+          <div class="text-banner">
+            <h1>
+              Virtual healthcare <br />
+              for you
+            </h1>
+            <p>
+              Trafalgar provides progressive, and affordable <br />
+              healthcare, accessible on mobile and online <br />
+              for everyone
+            </p>
+            <button>Consult today</button>
+          </div>
+          <div class="img-banner">
+            <img src="img/illustration.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="our_service">
+      <div class="container">
+        <div class="our_service">
+          <div class="text-service">
+            <h2>Our Services</h2>
+            <hr />
+            <p>
+              We provide to you the best choiches for you. Adjust it to your health needs and make sure your undergo treatment <br />
+              with our highly qualified doctors you can consult with us which type of service is suitable for your health
+            </p>
+          </div>
+          <div class="card-wrapper">
+            <div class="card">
+              <img src="img/1.svg" alt="" />
+              <h3>Search Dokter</h3>
+              <p>Choose your doctor from thousands of specialist, general, and trusted hospitals</p>
+            </div>
+
+            <div class="card">
+              <img src="img/2.svg" alt="" />
+              <h3>Search Dokter</h3>
+              <p>Choose your doctor from thousands of specialist, general, and trusted hospitals</p>
+            </div>
+
+            <div class="card">
+              <img src="img/3.svg" alt="" />
+              <h3>Search Dokter</h3>
+              <p>Choose your doctor from thousands of specialist, general, and trusted hospitals</p>
+            </div>
+
+            <div class="card">
+              <img src="img/4.svg" alt="" />
+              <h3>Details info</h3>
+              <p>Free consultation with our trusted doctors and get the best recomendations</p>
+            </div>
+
+            <div class="card">
+              <img src="img/2.svg" alt="" />
+              <h3>Search Dokter</h3>
+              <p>Choose your doctor from thousands of specialist, general, and trusted hospitals</p>
+            </div>
+
+            <div class="card">
+              <img src="img/6.svg" alt="" />
+              <h3>Search Dokter</h3>
+              <p>Choose your doctor from thousands of specialist, general, and trusted hospitals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact_us">
+      <div class="container">
+        <div class="contact-us">
+          <div class="form">
+           <p>Contact us</p>
+            <h2>Make an Appointmen</h2>
+            <form action="ok.html" method="get" target="_blank">
+              <label for="fname"></label>
+              <input type="text" id="fname" name="fname" placeholder="First Name" /><br /><br />
+              <label for="lname"></label>
+              <input type="text" id="lname" name="lname" placeholder="Last Name"/><br /><br />
+              <label for="email"></label>
+              <input type="text" id="email" name="email" placeholder="youremail@gmail.com"/><br /><br />
+              <label for="textarea"></label>
+              <textarea name="textarea" id="" cols="30" rows="10"></textarea><br /><br />
+              <button type="submit" />Send</button>
+            </form>
+          </div>
+          <div class="img">
+            <img src="img/trafalgar-illustration sec03 1.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+     <div class="container">
+      <div class="footer">
+       <p>Built with <i class="fa fa-heart hati"></i> by Arfan Dwi Sukmajaya</p>
+    </div>
+   </div>
+    </footer>
+
+    <script>
+      let lastScrollTop = 0;
+      let navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          navbar.style.top = "-110px";
+        } else {
+          navbar.style.top = "0";
+          navbar.classList.add("shadow");
+        }
+
+        lastScrollTop = scrollTop;
+
+        if (scrollTop == 0) {
+          navbar.classList.remove("shadow");
+        }
+        console.log(scrollTop);
+      });
+
+      // Untuk Navbar Hp
+      const sidedrawer = document.querySelector(".sidedrawer");
+      const burger = document.querySelector(".burger");
+      const backdrop = document.querySelector(".backdrop");
+
+      burger.addEventListener("click", () => {
+        sidedrawer.classList.add("active");
+        backdrop.classList.add("show");
+      });
+
+      backdrop.addEventListener("click", () => {
+        sidedrawer.classList.remove("active");
+        backdrop.classList.remove("show");
+      });
+    </script>
+  </body>
+</html>
